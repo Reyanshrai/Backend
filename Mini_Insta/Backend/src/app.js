@@ -2,9 +2,11 @@ import express from "express"
 import multer from "multer"
 import uploadFile from "./services/storage.service.js"
 import postModel from "./models/post.model.js"
+import cors from "cors"
 
 
 const app = express()
+app.use(cors())
 app.use(express.json())
 
 const upload = multer({storage:multer.memoryStorage()})
